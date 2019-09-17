@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>PxRG</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='style.css' type='text/css'/>
+    <link rel='icon' href='img/ball.png' type='image/png'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src='./js/main.js' type='module'></script>
+</head>
+
+<body>
+    <div class='container'>
+
+        <div class="system">
+
+
+            <div class="screen-border">
+                <canvas id="game" class="screen" width="512" height="512"></canvas>
+                <h1>Pokémon x Rogue-Like?</h1>
+            </div>
+
+            <div class='controls'>
+
+                <div class='d-pad'>
+                    <div id="N" class="button d    up"><span class="label">&#9650;</span></div>
+                    <div id="E" class="button d right"><span class="label">&#9654;</span></div>
+                    <div id="S" class="button d  down"><span class="label">&#9660;</span></div>
+                    <div id="W" class="button d  left"><span class="label">&#9664;</span></div>
+                    <div class="d middle"></div>
+                </div>
+            
+                <div class='ab-buttons'>
+                    <div id='control-a' class="button control a"><span class="label">A</span></div>
+                    <div id='control-b' class="button control b"><span class="label">B</span></div>
+                </div>
+
+
+                <div class='meta-buttons'>
+                    <div id='meta-start'  class="button meta  start"><span class="label">START</span></div>
+                    <div id='meta-select' class="button meta select"><span class="label">SELECT</span></div>
+                </div>
+            </div>
+
+        </div>
+        
+         <div style="display: none">
+            <div class="col">
+                <h3>What is it?</h3>
+                <p>An attempt at making a game in JavaScript. It is meant to be a bit Pokémon, and a bit rogue-like.</p>
+                <p>Each run will follow this pattern:</p>
+                <ol>
+                    <li>The Player starts in a city and chooses a <b>starter Pokémon</b>(tbd)</li>
+                    <li>They then have to travel a randomly generated world, containing <b>four cities</b> (not counting the starting one) and a <b>league</b>, with roads between these maps</li>
+                    <li>The Player must first collect <b>four badges</b> from each city, battling trainers and catching wild Pokémons in between</li>
+                    <li>The Player battles against the league and his team becomes the Champion's for the next run.</li>
+                    <li>Restart until Pokédex is full</li>
+                </ol>
+                <p>Some more details...</p>
+                <p>The Pokémons stats are similar from Pokémon Go (CPs and hidden values). Similarly, they have only two attacks, a basic and a charged one. They earn XP after each victory, which increases their CPs. Evolutions depends on the CPs. There is no K.O., only Death.</p>
+                <p>The fights are meant to be fast. Turn based, 3v3. The basic attack generates energy which can be used for a more powerful charged attack.</p>
+                <p>Each map between cities has at least one random event, including: wild Pokémon appears, trainers battles, evolution stones merchant, Pokémon trader, items (e.g. Berries)</p>
+                <p>Cities will have a Gym, a Pokémon Center to heal HPs and a Shop to buy Items.</p>
+                <p>Catching a wild Pokémon will require Pokéballs and Berries or in some cases, a Battle.</p>
+            </div>
+            <div class="col">
+                <h3>What's left to do</h3>
+                <ul>
+                    <li>Some animations: water, flowers, jump</li>
+                    <li>Map generation and/or handmade maps</li>
+                    <li>Display a world map</li>
+                    <li>Pokémon database (species and moves)</li>
+                    <li>Pokédex</li>
+                    <li>Map events (Shop, PokéCenter, trainers, random events, etc.)</li>
+                    <li>Legendary Maps (Articuno, Zapdos, Moltres or Mewtwo) with low spawn probability</li>
+                    <li>So much more...</li>
+                </ul>
+                <h3>What's done</h3>
+                <ul>
+                    <li>Maps display</li>
+                    <li>World generation</li>
+                    <li>Moving the character</li>
+                    <li>Moving between maps</li>
+                    <li>Use of keyboard</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

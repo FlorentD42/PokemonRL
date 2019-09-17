@@ -1,0 +1,221 @@
+@font-face {
+    font-family: Pokemon;
+    src: url('Pokemon GB.ttf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Code Pro', 'Consolas', 'Courier', monospace;
+    margin: 0;
+    background: grey;
+    font-size: 40px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.screen {
+    background: #fff; 
+    width: 9em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.system {
+    padding: 0.75em;
+    padding-bottom: 2em;
+    background: purple;
+	border-radius: 0.25em 0.25em 1em 1em;
+	border: 0.1em solid #690069;
+    width: 500px;
+    margin-top: 0.1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.screen-border {
+    width: 100%;
+    background: #333;
+    padding: 0.5em 0em;
+    border-radius: 0.25em 0.25em 1em 0.25em;
+	margin-bottom: 1em;
+}
+
+.meta-buttons {
+	position: absolute;
+	top: 6em;
+	left: 3em;
+	border-radius: 2em;
+}
+
+@media screen and ( max-width: 600px ) {
+    body {
+        font-size: 36px;
+    }
+    .screen {
+        width: 7em;
+        height: 6.3em;
+    }
+    .system {
+        width: 380px;
+    }
+    .meta-buttons {
+        left: 2em;
+    }
+}
+
+
+.container {
+    width: 100%;
+}
+
+p, li {
+    font-size: 0.4em;
+}
+
+
+.controls {
+    position: relative;
+    padding-bottom: 3em;
+}
+
+.button {
+    cursor: pointer;
+    box-shadow: 0 0 3px 1px #555;
+    color: grey;
+    text-align: center;
+}
+.button:hover {
+    box-shadow: 0 0 5px 1px #333;
+}
+.button:active, .button.active {
+    box-shadow: 0 0 5px 1px #333 inset;
+}
+.button .label {
+    font-size: 0.4em;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    color: lightgrey;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-size: 0.4em;
+    padding-top: 0.5em;
+}
+
+.d-pad {
+    width: 3em;
+    height: 3em;
+    position: relative;
+}
+.d {
+    width: 1em;
+    height: 1em;
+    background: #444;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left, .right, .down {
+    border-bottom: 0.05em solid #333;
+}
+.up, .left, .right {
+    border-top: 0.05em solid #666;
+}
+.up {
+    left: 1em;
+    top: 0;
+    border-radius: 0.25em 0.25em 0 0;
+}
+.right {
+    top: 1em;
+    right: 0;
+    border-radius: 0 0.25em 0.25em 0;
+}
+.down {
+    left: 1em;
+    bottom: 0;
+    border-radius: 0 0 0.25em 0.25em;
+}
+.left {
+    top: 1em;
+    left: 0;
+    border-radius: 0.25em 0 0 0.25em;
+}
+.up .label {
+    margin-bottom: 1em;
+}
+.right .label {
+    margin-left: 1em;
+}
+.down .label {
+    margin-top: 1em;
+}
+.left .label {
+    margin-right: 1em;
+}
+.middle {
+    top: 1em;
+    left: 1em;
+}
+
+
+.ab-buttons {
+    position: absolute;
+    right: 0;
+    top: 0.5em;
+    border-radius: 2em;
+}
+.control {
+    background: #444;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1.5em;
+    float: right;
+    margin: 0.25em;
+    border-top: 0.05em solid #666;
+    border-bottom: 0.05em solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.control:hover, .control:active {
+    background: #555;
+}
+.control .label {
+    bottom: 0em;
+}
+.b {
+    margin-top: 1em;
+}
+
+
+.meta {
+	background: #444;
+	width: 1.8em;
+	height: 0.5em;
+	border-radius: 0.4em;	
+	float: right;
+	margin: 0.25em;
+	border-top: 0.05em solid #666;
+	border-bottom: 0.05em solid #333;
+}
+.meta:hover, .meta:active {
+	background: #555;
+}
+.meta .label {
+	bottom: -0.6em;
+}
+
+.label {
+	user-select: none;
+}
