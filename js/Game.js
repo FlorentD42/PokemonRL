@@ -55,10 +55,10 @@ class Game {
     }
 
     load() {
-        return [this.loader.loadImage('outside', '../img/outside.png'),
-                this.loader.loadImage('inside',  '../img/inside.png'),
-				this.loader.loadImage('animation', '../img/anims.png'),
-                this.loader.loadImage('entities','../img/entities.png')];
+        return [this.loader.loadImage('outside',   'img/outside.png'),
+                this.loader.loadImage('inside',    'img/inside.png'),
+				this.loader.loadImage('animation', 'img/anims.png'),
+                this.loader.loadImage('entities',  'img/entities.png')];
     }
 
     run(context) {
