@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapper</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="out_script.js"></script>
+    <style>
+    </style>
+</head>
+
+
+<body>
+    <div class='container-fluid'>
+        <center><h1>Map editor</h1></center>
+        <div class='row'>
+            <div class='col text-right'>
+                <div class=''>
+                    <img src='../img/outside.png' width="700px" id="tileAtlas"/>
+                </div>
+                <div class='row'>
+                    <div class='col'>
+                        <p>Selected: </p>
+                        <canvas id="tile" height="27px" width="27px" style="border: 1px solid lightgrey">
+                        </canvas>
+                        <br/>
+                        <button id='fill'>Fill</button>
+                    </div>
+                    <div class='col form-group row'>
+                        <label for='type' class='col'>Type:</label>
+                        <select id='type' class='form-control col'>
+                            <option value=0>start</option>
+                            <option value=1>city</option>
+                            <option value=2>route</option>
+                            <option value=3>finish</option>
+                            <option value=4>entrance</option>
+                            <option value=5>cave</option>
+                        </select>
+                    </div>
+                    <div class='col'>
+                        <p>Ways:</p>
+                        <div class='form-check-inline'>
+                            <input type='checkbox' value=1 id='check1' class='form-check-input'/>
+                            <label class='form-check-label' for='check1'>N</label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <input type='checkbox' value=2 id='check2' class='form-check-input'/>
+                            <label class='form-check-label' for='check2'>S</label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <input type='checkbox' value=4 id='check3' class='form-check-input'/>
+                            <label class='form-check-label' for='check3'>E</label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <input type='checkbox' value=8 id='check4' class='form-check-input'/>
+                            <label class='form-check-label' for='check4'>W</label>
+                        </div>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col form-group row'>
+                        <label for='files' class='col'>Load file: </label>
+                        <select id='files' class='form-control col'>
+                        </select>
+                        <button id='load' class='form-control col-2'>LOAD</button>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col form-group row'>
+                        <label for='fileName' class='col'>Save file: </label>
+                        <input type='text' id='fileName' class='form-control col'/>
+                        <button id='save' class='form-control col-2'>SAVE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='col'>
+                <canvas id='map' height="700px" width="700px"></canvas>
+            </div>
+        </div>
+        <div>
+            <button id='json_button'>Get JSON</button>
+            <br/>
+            <code id='json'></code>
+        </div>
+    </div>
+    
+</body>
+
+</html>

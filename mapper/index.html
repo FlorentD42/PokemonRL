@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Map editor</title>
+        <link rel='stylesheet' href='editor.css' type='text/css'/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src='editor.js' type='module'></script>
+    </head>
+
+    <body>
+        <div class='row'>
+
+            <div class='column left'>
+                <div class="topPanel">
+                Selection: <canvas id="selectTile" width=32 height=32></canvas>
+                    <button id="fillButton">Fill</button>
+                    <button id="eraseButton">Erase</button>
+                    <span id="coord">[1, 1]</span>
+                </div>
+
+                <div class="accordion">File</div>
+                <div class="panel">
+                    <button id="newOutside">New Outside Map</button>
+                    <button id="newInside">New Inside Map</button>
+                    <button id="saveButton">Save JSON</button>&nbsp;
+                    <button id="loadButton">Load JSON</button>
+                </div>
+
+                <div class="accordion">Grid</div>
+                <div class="panel">
+                    <label for="zoom">Zoom :</label>
+                    <select id="zoom">
+                        <option value="1.0">100 %</option>
+                        <option value="1.5">150 %</option>
+                        <option value="2.0">200 %</option>
+                        <option value="2.5" selected>250 %</option>
+                        <option value="3.0">300 %</option>
+                        <option value="3.5">350 %</option>
+                        <option value="4.0">400 %</option>
+                    </select>
+                    <label for="cols">&nbsp;Columns: </label>
+                    <input type="number" value="20" id="cols" max="30" min="10">
+                    <label for="cols">&nbsp;Rows: </label>
+                    <input type="number" value="20" id="rows" max="30" min="10">
+                    <label for="displayGrid">&nbsp;Display: </label>
+                    <input type="checkbox" checked id="displayGrid">
+
+                </div>
+
+                <div class="accordion">Map options</div>
+                <div class="panel">
+                    <label for="type">Type:</label>
+                    <select id="type">
+                        <option value="0" selected></option>
+                        <option value="1">Start</option>
+                        <option value="2">City</option>
+                        <option value="3">Route</option>
+                        <option value="4">Finish</option>
+                        <option value="5">Cave in</option>
+                        <option value="6">Cave</option>
+                        <option value="7">Cave out</option>
+                        <option value="8">House</option>
+                        <option value="9">Pokémon Center</option>
+                        <option value="10">Shop</option>
+                        <option value="11">Gym</option>
+                        <option value="12">Laboratory</option>
+                    </select>
+                    <br>
+                    <p>Paths: <br>
+                    <input type="checkbox" value="1" id="check1">
+                    <label for="check1">North</label><br>
+                    
+                    <input type="checkbox" value="2" id="check">
+                    <label for="check2">South</label><br>
+                    
+                    <input type="checkbox" value="4" id="check4">
+                    <label for="check4">East</label><br>
+                    
+                    <input type="checkbox" value="8" id="check8">
+                    <label for="check8">West</label><br></p>
+                </div>
+
+                <div class="accordion">Entities</div>
+                <div class="panel">
+
+                    <p>
+                        <label for="entityType">Type:</label>
+                        <select id="entityType">
+                            <option value=""></option>
+                            <option value="start">Start</option>
+                            <option value="npc">NPC</option>
+                            <option value="tp">Teleport</option>
+                            <option value="item">Item</option>
+                            <option value="tooltip">Tooltip</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="entityCol">Column: </label>
+                        <input type="number" min="1" max="30" id="entityCol" disabled>
+                        <label for="entityRow">Row: </label>
+                        <input type="number" min="1" max="30" id="entityRow" disabled>
+                    </p>
+                    <p>
+                        <label for="entityOrientation">Orientation: </label>
+                        <select id="entityOrientation" disabled>
+                            <option value="1">North</option>
+                            <option value="2">South</option>
+                            <option value="4">East</option>
+                            <option value="8">West</option>
+                    </select>
+                    </p>
+                    <p>
+                        <label for="targetMap">Target map: </label>
+                        <select id="targetMap" disabled>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="targetCol">Target column: </label>
+                        <input type="number" min="1" max="30" id="targetCol" disabled/>
+                        <label for="targetRow">Target row: </label>
+                        <input type="number" min="1" max="30" id="targetRow" disabled/>
+                    </p>
+
+                    <button>Add entity</button>
+
+                </div>
+
+
+                <div class="accordion">Palette</div>
+                <div class="panel palette">
+                    <img id="outsideTiles" style="display:none" src="../img/outside.png" />
+                    <img id="insideTiles" style="display:none" src="../img/inside.png" />
+                    <canvas id="tileset"></canvas>
+                </div>
+
+
+                
+            </div>
+
+
+
+            <div class='column main'>
+                <canvas id='map' width="320px" height="320px"></canvas>
+            </div>
+
+        </div>
+
+        <div class="modal save">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <label for="saveInput">File name: </label>
+                <input type="text" id="saveInput" required>
+                <button id="saveConfirm">Save</button>
+            </div>
+        </div>
+        <div class="modal load">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <label for="loadSelect">Load map: </label>
+                <select id="loadSelect">
+                </select>
+                <button id="loadConfirm">Load</button>
+            </div>
+        </div>
+    </body>
+</html>
