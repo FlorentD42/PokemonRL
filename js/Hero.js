@@ -233,13 +233,13 @@ class Hero {
     }
 
     isOnDoor() {
-        var colrow = this.getColRow;
+        var colrow = this.getColRow();
         var tile = this.map.getTile(colrow[0], colrow[1]);
         return this.map.isDoor(tile);
     }
 
     isInGrass() {
-        var colrow = this.getColRow;
+        var colrow = this.getColRow();
         var tile = this.map.getTile(colrow[0], colrow[1]);
         return this.map.isGrass(tile);
     }
